@@ -66,16 +66,16 @@ export default class Column extends React.Component {
 
                 </FirstContainer>
 
-              <div>Tarun</div>
-              <div>Tarun</div>
-              <div>Tarun</div>
-              <div>Tarun</div>
-              <div>Tarun</div>
-              <div>Tarun</div>
-              <div>Tarun</div>
-              <div>Tarun</div>
+            <div>Tarun</div>
+            <div>Tarun</div>
+            <div>Tarun</div>
+            <div>Tarun</div>
+            <div>Tarun</div>
+            <div>Tarun</div>
+            <div>Tarun</div>
+            <div>Tarun</div>
 
-              </SecondContainer>
+            </SecondContainer>
 
           )}
               </Droppable>

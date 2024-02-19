@@ -8,6 +8,8 @@ import Column from './column';
 
 const Container = styled.div`
   display: flex-row;
+  height: 500px;
+  overflow-y: scroll;
 `;
 
 class App extends React.Component {
