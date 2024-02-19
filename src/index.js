@@ -8,14 +8,22 @@ import Column from './column';
 
 const Container = styled.div`
   display: flex-row;
-  height: 500px;
+  height: ${props => props.isDragging ? 'full' : '500px'}; /* Adjust height based on isDragging state */
   overflow-y: scroll;
 `;
 
 class App extends React.Component {
-  state = initialData;
+  state = {
+    ...initialData,
+    isDragging: false, 
+  };
+
+  onDragStart = () => {
+    this.setState({ isDragging: true }); 
+  };
 
   onDragEnd = result => {
+    this.setState({ isDragging: false }); 
     const { destination, source, draggableId } = result;
 
     if (!destination) {
@@ -78,12 +86,15 @@ class App extends React.Component {
       },
     };
     this.setState(newState);
+
+
+
   };
 
   render() {
     return (
-      <DragDropContext onDragEnd={this.onDragEnd}>
-        <Container>
+      <DragDropContext onDragStart={this.onDragStart} onDragEnd={this.onDragEnd}>
+        <Container isDragging={this.state.isDragging}> 
           {this.state.columnOrder.map(columnId => {
             const column = this.state.columns[columnId];
             const tasks = column.taskIds.map(
